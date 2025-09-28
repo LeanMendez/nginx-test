@@ -1,0 +1,183 @@
+---
+import Navbar from '../components/Navbar.astro';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Contacto - Mi Sitio</title>
+	</head>
+	<body>
+		<Navbar />
+		<main class="container">
+			<h1>Contáctanos</h1>
+			<div class="contact-grid">
+				<div class="contact-info">
+					<h2>Información de Contacto</h2>
+					<div class="info-item">
+						<h3>📧 Email</h3>
+						<p>contacto@misitio.com</p>
+					</div>
+					<div class="info-item">
+						<h3>📱 Teléfono</h3>
+						<p>+1 (555) 123-4567</p>
+					</div>
+					<div class="info-item">
+						<h3>📍 Dirección</h3>
+						<p>123 Calle Principal<br>Ciudad, País 12345</p>
+					</div>
+					<div class="info-item">
+						<h3>🕒 Horarios</h3>
+						<p>Lunes a Viernes: 9:00 AM - 6:00 PM<br>Sábados: 10:00 AM - 4:00 PM</p>
+					</div>
+				</div>
+
+				<div class="contact-form">
+					<h2>Envíanos un Mensaje</h2>
+					<form>
+						<div class="form-group">
+							<label for="name">Nombre:</label>
+							<input type="text" id="name" name="name" required>
+						</div>
+
+						<div class="form-group">
+							<label for="email">Email:</label>
+							<input type="email" id="email" name="email" required>
+						</div>
+
+						<div class="form-group">
+							<label for="subject">Asunto:</label>
+							<input type="text" id="subject" name="subject" required>
+						</div>
+
+						<div class="form-group">
+							<label for="message">Mensaje:</label>
+							<textarea id="message" name="message" rows="5" required></textarea>
+						</div>
+
+						<button type="submit" class="submit-btn">Enviar Mensaje</button>
+					</form>
+					<p class="form-note">
+						<strong>Nota:</strong> Este es un formulario de demostración. En una implementación real,
+						necesitarías configurar un backend para procesar los envíos.
+					</p>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+
+<style>
+	body {
+		margin: 0;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		line-height: 1.6;
+		color: #333;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	h1 {
+		color: #2c3e50;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.contact-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 3rem;
+	}
+
+	.contact-info h2,
+	.contact-form h2 {
+		color: #2c3e50;
+		margin-bottom: 2rem;
+	}
+
+	.info-item {
+		margin-bottom: 2rem;
+		padding: 1.5rem;
+		background: #f8f9fa;
+		border-radius: 8px;
+		border-left: 4px solid #3498db;
+	}
+
+	.info-item h3 {
+		color: #2c3e50;
+		margin: 0 0 0.5rem 0;
+		font-size: 1.1rem;
+	}
+
+	.info-item p {
+		margin: 0;
+		color: #666;
+	}
+
+	.form-group {
+		margin-bottom: 1.5rem;
+	}
+
+	label {
+		display: block;
+		margin-bottom: 0.5rem;
+		color: #2c3e50;
+		font-weight: 500;
+	}
+
+	input,
+	textarea {
+		width: 100%;
+		padding: 0.8rem;
+		border: 2px solid #e0e0e0;
+		border-radius: 5px;
+		font-size: 1rem;
+		font-family: inherit;
+		transition: border-color 0.3s ease;
+	}
+
+	input:focus,
+	textarea:focus {
+		outline: none;
+		border-color: #3498db;
+	}
+
+	.submit-btn {
+		background: #3498db;
+		color: white;
+		padding: 1rem 2rem;
+		border: none;
+		border-radius: 5px;
+		font-size: 1.1rem;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+
+	.submit-btn:hover {
+		background: #2980b9;
+	}
+
+	.form-note {
+		margin-top: 1rem;
+		padding: 1rem;
+		background: #fff3cd;
+		border: 1px solid #ffeaa7;
+		border-radius: 5px;
+		font-size: 0.9rem;
+		color: #856404;
+	}
+
+	@media (max-width: 768px) {
+		.contact-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>

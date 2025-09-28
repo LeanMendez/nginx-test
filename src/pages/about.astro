@@ -1,0 +1,141 @@
+---
+import Navbar from '../components/Navbar.astro';
+---
+
+<html lang="es">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Acerca de - Mi Sitio</title>
+	</head>
+	<body>
+		<Navbar />
+		<main class="container">
+			<h1>Acerca de Nosotros</h1>
+			<div class="content">
+				<div class="text-section">
+					<p>
+						Somos un equipo apasionado por el desarrollo web moderno. Nos especializamos en
+						crear sitios web rápidos, seguros y escalables utilizando las mejores tecnologías disponibles.
+					</p>
+					<h2>Nuestra Misión</h2>
+					<p>
+						Democratizar el acceso a tecnologías web de vanguardia, haciendo que sean accesibles
+						para proyectos de cualquier tamaño.
+					</p>
+					<h2>Tecnologías que Usamos</h2>
+					<ul class="tech-list">
+						<li>⚡ Astro - Framework moderno para sitios estáticos</li>
+						<li>🐳 Docker - Containerización y deployment</li>
+						<li>🌐 Nginx - Servidor web de alto rendimiento</li>
+						<li>☁️ Render - Plataforma de deployment en la nube</li>
+					</ul>
+				</div>
+				<div class="stats">
+					<div class="stat">
+						<h3>50+</h3>
+						<p>Proyectos Completados</p>
+					</div>
+					<div class="stat">
+						<h3>99.9%</h3>
+						<p>Tiempo de Actividad</p>
+					</div>
+					<div class="stat">
+						<h3>24/7</h3>
+						<p>Soporte Técnico</p>
+					</div>
+				</div>
+			</div>
+		</main>
+	</body>
+</html>
+
+<style>
+	body {
+		margin: 0;
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+		line-height: 1.6;
+		color: #333;
+	}
+
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem;
+	}
+
+	h1 {
+		color: #2c3e50;
+		text-align: center;
+		margin-bottom: 3rem;
+	}
+
+	.content {
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+		gap: 3rem;
+		align-items: start;
+	}
+
+	.text-section h2 {
+		color: #2c3e50;
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+
+	.text-section p {
+		font-size: 1.1rem;
+		color: #666;
+		margin-bottom: 1.5rem;
+	}
+
+	.tech-list {
+		list-style: none;
+		padding: 0;
+	}
+
+	.tech-list li {
+		background: #f8f9fa;
+		padding: 0.8rem 1rem;
+		margin: 0.5rem 0;
+		border-radius: 5px;
+		border-left: 4px solid #3498db;
+	}
+
+	.stats {
+		background: #2c3e50;
+		padding: 2rem;
+		border-radius: 10px;
+		color: white;
+		text-align: center;
+	}
+
+	.stat {
+		margin-bottom: 2rem;
+	}
+
+	.stat:last-child {
+		margin-bottom: 0;
+	}
+
+	.stat h3 {
+		font-size: 2.5rem;
+		margin: 0;
+		color: #3498db;
+	}
+
+	.stat p {
+		margin: 0.5rem 0 0 0;
+		font-size: 0.9rem;
+		opacity: 0.9;
+	}
+
+	@media (max-width: 768px) {
+		.content {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+	}
+</style>
