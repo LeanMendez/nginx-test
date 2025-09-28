@@ -23,16 +23,18 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Remove default nginx config
 RUN rm /etc/nginx/conf.d/default.conf
 
-# Create nginx cache directories
+# Create nginx cache directories with proper permissions
 RUN mkdir -p /var/cache/nginx/client_temp \
              /var/cache/nginx/proxy_temp \
              /var/cache/nginx/fastcgi_temp \
              /var/cache/nginx/uwsgi_temp \
-             /var/cache/nginx/scgi_temp
+             /var/cache/nginx/scgi_temp \
+             /tmp
 
-# Set proper permissions
+# Set proper permissions for nginx user
 RUN chown -R nginx:nginx /var/cache/nginx && \
     chown -R nginx:nginx /usr/share/nginx/html && \
+    chown nginx:nginx /tmp && \
     chmod -R 755 /usr/share/nginx/html
 
 EXPOSE 80
